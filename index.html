@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobra Corporate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased selection:bg-emerald-500 selection:text-gray-950">
 
+    <nav x-data="{ mobileMenuOpen: false }" class="border-b border-gray-900 bg-gray-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-black tracking-wider text-emerald-400 flex items-center gap-2">
+                <i class="fa-solid fa-dragon text-2xl"></i>
+                <span>COBRA <span class="text-white font-light">CORPORATE</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-gray-400">
+                <a href="#o-nas" class="hover:text-emerald-400 transition">O nas</a>
+                <a href="#uslugi" class="hover:text-emerald-400 transition">Usługi</a>
+                <a href="#liczby" class="hover:text-emerald-400 transition">Wyniki</a>
+                <a href="#opinie" class="hover:text-emerald-400 transition">Opinie</a>
+                <a href="#kontakt" class="hover:text-emerald-400 transition">Kontakt</a>
+            </div>
+
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+            </button>
+        </div>
+
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden border-b border-gray-900 bg-gray-950 px-6 py-4 space-y-4">
+            <a href="#o-nas" @click="mobileMenuOpen = false" class="block text-gray-400 hover:text-emerald-400 transition">O nas</a>
+            <a href="#uslugi" @click="mobileMenuOpen = false" class="block text-gray-400 hover:text-emerald-400 transition">Usługi</a>
+            <a href="#liczby" @click="mobileMenuOpen = false" class="block text-gray-400 hover:text-emerald-400 transition">Wyniki</a>
+            <a href="#opinie" @click="mobileMenuOpen = false" class="block text-gray-400 hover:text-emerald-400 transition">Opinie</a>
+            <a href="#kontakt" @click="mobileMenuOpen = false" class="block text-gray-400 hover:text-emerald-400 transition">Kontakt</a>
+        </div>
+    </nav>
+
+    <header id="o-nas" class="relative overflow-hidden py-24 lg:py-36">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Nowa era efektywności operacyjnej
+                </span>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mt-4 mb-6 leading-tight">
+                    Precyzja działania. <br>
+                    <span class="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">Bezwzględna skuteczność.</span>
+                </h1>
+                <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+                    Dostarczamy zaawansowane rozwiązania systemowe, automatyzację procesów i wsparcie IT dla wymagającego biznesu. Działamy szybko, adaptujemy się natychmiastowo, eliminujemy błędy.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#kontakt" class="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold px-8 py-4 rounded-lg text-center transition shadow-lg shadow-emerald-500/20">
+                        Rozpocznij współpracę
+                    </a>
+                    <a href="#uslugi" class="border border-gray-700 hover:border-emerald-500 text-white font-medium px-8 py-4 rounded-lg text-center transition">
+                        Zobacz nasze usługi
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl -z-10"></div>
+    </header>
+
+    <section id="uslugi" class="py-24 bg-gray-900/40 border-t border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Nasze filary operacyjne</h2>
+                <p class="text-gray-400">Kompleksowe podejście do optymalizacji struktur i systemów technologicznych w Twoim przedsiębiorstwie.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-950 border border-gray-900 p-8 rounded-xl hover:border-emerald-500/40 transition group duration-300">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 flex items-center justify-center rounded-lg mb-6 group-hover:bg-emerald-500 group-hover:text-gray-950 transition duration-300">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-emerald-400 transition">Analiza i Strategia</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Głęboki audyt procesów biznesowych, identyfikacja wąskich gardeł i wdrożenie optymalizacji ukierunkowanych na maksymalizację zysków oraz oszczędność czasu.</p>
+                </div>
+                <div class="bg-gray-950 border border-gray-900 p-8 rounded-xl hover:border-emerald-500/40 transition group duration-300">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 flex items-center justify-center rounded-lg mb-6 group-hover:bg-emerald-500 group-hover:text-gray-950 transition duration-300">
+                        <i class="fa-solid fa-code text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-emerald-400 transition">Systemy Dedykowane</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Projektowanie, budowanie i wdrażanie autorskich narzędzi informatycznych oraz mobilnych (Flutter/Web), automatyzujących codzienną obsługę procesów i bazy danych.</p>
+                </div>
+                <div class="bg-gray-950 border border-gray-900 p-8 rounded-xl hover:border-emerald-500/40 transition group duration-300">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 flex items-center justify-center rounded-lg mb-6 group-hover:bg-emerald-500 group-hover:text-gray-950 transition duration-300">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-emerald-400 transition">Wsparcie i Bezpieczeństwo</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Zarządzanie kryzysowe, stała opieka techniczna (Help Desk), optymalizacja infrastruktury sieciowej oraz zabezpieczenie ciągłości operacyjnej na najwyższym poziomie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="liczby" class="py-20 bg-gray-950" x-data="{ 
+        klon: 0, 
+        projekty: 0, 
+        automatyzacja: 0,
+        init() {
+            setTimeout(() => { this.animate() }, 200);
+        },
+        animate() {
+            let k = setInterval(() => { if(this.klon < 140) this.klon += 2; else clearInterval(k) }, 15);
+            let p = setInterval(() => { if(this.projekty < 48) this.projekty++; else clearInterval(p) }, 25);
+            let a = setInterval(() => { if(this.automatyzacja < 95) this.automatyzacja++; else clearInterval(a) }, 15);
+        }
+    }">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-5xl font-black text-emerald-400 mb-2 md:text-6xl" x-text="klon + '+'">0+</div>
+                    <div class="text-sm uppercase tracking-widest text-gray-500 font-semibold">Obsłużonych firm</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-black text-white mb-2 md:text-6xl" x-text="projekty">0</div>
+                    <div class="text-sm uppercase tracking-widest text-gray-500 font-semibold">Zrealizowanych systemów</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-black text-emerald-400 mb-2 md:text-6xl" x-text="automatyzacja + '%'">0%</div>
+                    <div class="text-sm uppercase tracking-widest text-gray-500 font-semibold">Zautomatyzowanych zadań</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="opinie" class="py-24 bg-gray-900/20 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Zaufali drapieżnej skuteczności</h2>
+                <p class="text-gray-400">Zobacz, co mówią partnerzy, u których wdrożyliśmy standardy Cobra Corporate.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-950 border border-gray-900 p-8 rounded-xl relative">
+                    <i class="fa-solid fa-quote-right text-4xl text-emerald-500/10 absolute top-6 right-6"></i>
+                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed">
+                        "Wdrożenie dedykowanego systemu rejestracji oraz automatyzacji bazy danych całkowicie zlikwidowało opóźnienia operacyjne. Zespół Cobra Corporate działa bezkompromisowo i terminowo."
+                    </p>
+                    <div>
+                        <h4 class="font-bold text-white">Mariusz Kamiński</h4>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">Dyrektor Operacyjny, Nexus Logistyka</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-950 border border-gray-900 p-8 rounded-xl relative">
+                    <i class="fa-solid fa-quote-right text-4xl text-emerald-500/10 absolute top-6 right-6"></i>
+                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed">
+                        "Ich audyt technologiczny otworzył nam oczy na marnotrawstwo zasobów. Nowa aplikacja mobilna i automatyzacja procesów Help Desk pozwoliły nam zaoszczędzić kilkadziesiąt godzin pracy tygodniowo."
+                    </p>
+                    <div>
+                        <h4 class="font-bold text-white">Karolina Wójcik</h4>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">CEO, FinTech Solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-24 bg-gray-950 border-t border-gray-900">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Uruchom procedurę wdrażania</h2>
+                <p class="text-gray-400">Napisz do nas. Przeanalizujemy Twoje struktury i wrócimy z bezwzględnie skutecznym planem działania.</p>
+            </div>
+
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Procedura kontaktu uruchomiona pomyślnie.');">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 font-bold mb-2">Imię i nazwisko</label>
+                        <input type="text" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 font-bold mb-2">Adres E-mail</label>
+                        <input type="email" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-500 font-bold mb-2">Temat zgłoszenia</label>
+                    <input type="text" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-500 font-bold mb-2">Opis sytuacji / Wyzwanie biznesowe</label>
+                    <textarea rows="5" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-black uppercase tracking-wider py-4 rounded-lg transition shadow-lg shadow-emerald-500/10 cursor-pointer">
+                    Wyślij zapytanie operacyjne
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-900 py-12 bg-gray-950 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-emerald-400 font-bold tracking-wider">
+                COBRA CORPORATE &copy; 2026
+            </div>
+            <div class="text-xs text-gray-600">
+                Wszelkie prawa zastrzeżone. Działasz na własną odpowiedzialność.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
